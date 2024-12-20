@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* The style for Body of the page */
+body {
+    color: white;
+    background: linear-gradient(135deg, #FC00FF, #00DBDE);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 4rem 650px 300px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Styles for header  */
+.header {
+    display: grid;
+    width: 100%;
+    height: 2.5rem;
+    /* justify-content: space-between; */
+}
+
+/* Navigation Bar  */
+.navbar {
+    height: 3rem;
+    background-color: rgb(0, 0, 0);
+    width:100%;
+    display: grid;
+    grid-template-columns:8% 87% 5%;
+}
+
+.Name{
+    display:grid;
+    font-family: "Dancing Script", serif;
+    font-size: 2rem;
+    /* position: absolute; */
+    /* position:fixed; */
+    vertical-align: baseline;
+    /* margin-left:4%; */
+    top:4px;
+    cursor: pointer;
+}
+/* Menu Icons Styling */
+.menu-icons {
+    padding: 5px 5px;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.collapse {
+    position: absolute;
+    right: 0;
+}
+
+/* File Input Button */
+#audioi {
+    cursor: pointer;
+}
+
+/* Setting for Importing audio files from users local storage */
+.input-div {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+/* Styles for the container containing the contents of the music player */
+.container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    align-content: center;
+    margin: 40px auto;
+    margin-top: 50px;
+}
+
+/* Setting for the box containing the album cover  */
+.box {
+    display: grid;
+    margin: 10px 10px;
+    height: 40rem;
+    width: 28rem;
+    border: none;
+    border-radius: 4%;
+    align-items: center;
+    background-color: gray;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    /* justify-content: center; */
+    box-sizing: border-box;
+    grid-template-rows: 60% 10% 10% 20%;
+}
+
+/* Style for album-cover  div */
+.image {
+    position: relative;
+    margin: auto auto;
+    display: block;
+    /* width:340px; */
+    width: 330px;
+    /* height:340px; */
+    height: 330px;
+    margin: 25px auto;
+    border-radius: 50%;
+    background-image: url(assets/default-cover2.jpg);
+    /* background-color: black;  */
+    box-shadow: 0 0 0 10px rgb(255, 255, 255, 0.08);
+    background-position: center;
+    /*Centers the Image */
+    background-size: cover;
+    /* Ensures that the Image covers the container */
+}
+
+/* Album Cover div psuedo selector */
+.image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+/* Styles for album cover  */
+.album-cvr {
+    height: 350px;
+    width: 350px;
+    border-radius: 80%;
+    margin-bottom: 10px;
+}
+
+/* Style for Song Title */
+.title {
+    position: relative;
+    /* display:block; */
+    text-align: center;
+    /* font-size:1.4rem; */
+    font-size: 1.5rem;
+}
+
+/* Style for artist names */
+.artist {
+    text-align: center;
+    /* font-size:1.3rem; */
+    font-size: 1.5rem;
+    margin: 10px auto;
+}
+
+/* Style for the container containing  progress bar for smartphones and tablets */
+.mqslider {
+    width: 100%;
+    position: relative;
+    padding: 20px 20px;
+    /* display: grid;; */
+    /* grid-template-areas:" start bar end";
+    grid-template-columns: 20% 60% 20%; */
+}
+
+/* Style for the progress bar  */
+.seek-bar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: black;
+    overflow: hidden;
+    cursor: pointer;
+    /* grid-area: bar; */
+}
+
+/* Style for the slider of the progress bar */
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* -moz-appearance:none is mentioned here because webkit works for chrome and safari based browsers but not on mozilla browsers */
+    -moz-appearance: none;
+    width: 10px;
+    height: 20px;
+    background-color: red;
+    box-shadow: -400px 0 0 400px #ffff;
+}
+
+/* For the running time of the song  */
+.current-time,
+.total-time {
+    /* font-size: 14px; */
+    font-size: 20px;
+
+}
+
+/* Style for the Total time of the song */
+.total-time {
+    /* grid-area: end; */
+    position: absolute;
+    right: 19px;
+}
+
+/* Style for the container containing the control icons  */
+.controls {
+    /* margin-top: 5%; */
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 0px;
+    height: 4rem;
+    /* margin:auto; */
+}
+
+.main-control {
+    /* font-size:46px;   */
+    font-size: 52px;
+    font-weight: normal;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.main-control:hover {
+    color: black;
+}
+
+.ControlBtn {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.ControlBtn:hover {
+    color: black;
+}
+
+.seek-bar2 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: black;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* -moz-appearance:none is mentioned here because webkit works for chrome and safari based browsers but not on mozilla browsers */
+    -moz-appearance: none;
+    width: 10px;
+    height: 20px;
+    background-color: red;
+    box-shadow: -900px 0 0 900px #ffff;
+}
+
+.controls-desk {
+    /* margin-top: 5%; */
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 0px;
+    height: rem;
+    width: 20rem;
+    /* margin:auto; */
+}
+
+.control-box {
+    display: grid;
+    justify-content: center;
+}
+
+/* Style for Desktop Music Control bar div */
+.playbar {
+    padding: 10px 10px;
+    margin-top: 30px;
+    height: 5rem;
+    width: 99%;
+    position: relative;
+    /* border:2px solid gold; */
+    justify-content: center;
+    display: none;
+}
+
+#audioPlayer {
+    display: none;
+}
+
+/* Style for the progress bar  */
+#progress {
+    width: 100%;
+}
+
+/* .repeat{
+    color:initial;
+} */
+/* .repeat.clicked{
+    color: black;
+} */
+.playlist {
+    background-color: rgb(26, 24, 24);
+    height: 95%;
+    width: 20rem;
+    position: fixed;
+    top: 46px;
+    right: 0;
+    opacity: 80%;
+    right: -100%;
+    transition: ease-out 0.8s;
+    max-width: 100vw;
+    max-width: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1000;
+}
+
+.song-list {
+    list-style: none;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.song-list:hover {
+    background-color: gray;
+    color: black;
+}
+
+.active-song {
+    background-color: orange;
+    color: black;
+}
+
+.playlist.active {
+    right: 0;
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color:grey;
+}
+
+::-webkit-scrollbar-thumb{
+    background:rgb(76, 74, 74);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: black;
+}

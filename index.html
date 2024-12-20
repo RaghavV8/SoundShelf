@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>        
+        SoundShelf: Revive your classic downloads
+    </title>
+    <link rel="shortcut icon" href="assets/default-cover2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaq.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>      
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div><i class='bx bx-arrow-back menu-icons filechange'></i></div>
+            <div class="Name">SoundShelf</div>
+            <div><i class='bx bx-menu menu-icons collapse headlist'></i></div>
+        </nav>
+    </header>
+    <div class="playlist"></div>
+    <div class="container">
+        <div class="input-div">
+            <input type="file" name="audioi" id="audi" accept="audio/*" class="input" multiple>
+        </div>
+        <div class="box">
+            <div class="image">
+            </div>
+            <div>
+                <div class="title">Song</div>
+                <div class="artist">Artist</div>
+            </div>
+            <div class="mqslider">
+                <input type="range" value="0" id="mediaprogress" class="seek-bar">
+                <span class="current-time">00:00</span>
+                <span class="total-time">00:00</span>
+            </div>
+            <div class="controls">
+                <button class="ControlBtn repeat"><i class='bx bx-repeat main-control '></i> </button>
+                <button class="ControlBtn prev"> <i class='bx bxs-skip-previous-circle main-control '></i></button>
+                <button class="ControlBtn play"> <i class='bx bx-play-circle main-control '></i></button>
+                <button class="ControlBtn next"> <i class='bx bxs-skip-next-circle main-control '></i></button>
+                <button class="ControlBtn shuffle"><i class='bx bx-shuffle main-control '></i></button>
+            </div>
+        </div>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+    <div class="playbar">
+        <div class="slider">
+            <input type="range" value="0" id="progress" class="seek-bar2">
+            <span class="current-time">00:00</span>
+            <span class="total-time">00:00</span>
+        </div>
+        <div class="control-box">
+            <div class="controls-desk">
+                <button class="ControlBtn repeat"><i class='bx bx-repeat main-control '></i> </button>
+                <button class="ControlBtn prev"> <i class='bx bxs-skip-previous-circle main-control '></i></button>
+                <button class="ControlBtn play"> <i class='bx bx-play-circle main-control '></i></button>
+                <button class="ControlBtn next"> <i class='bx bxs-skip-next-circle main-control '></i></button>
+                <button class="ControlBtn shuffle"><i class='bx bx-shuffle main-control '></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

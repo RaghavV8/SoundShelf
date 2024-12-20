@@ -130,6 +130,7 @@ audioinput.addEventListener("change", (e) => {
 
     // Play first song if songs are added
     if (songs.length > 0) {
+        resetRot();
         Play(0);
     }
 });

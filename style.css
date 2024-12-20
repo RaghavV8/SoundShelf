@@ -46,6 +46,8 @@ body {
     /* margin-left:4%; */
     top:4px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 /* Menu Icons Styling */
 .menu-icons {

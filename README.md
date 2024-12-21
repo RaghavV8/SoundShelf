@@ -37,6 +37,8 @@ SoundShelf is a modern, web-based Music Player that brings the Music-Stash lying
 ![Alt text](src/Main-interface.png)
 - Playlist view
 ![Alt text](src/playlist.png)
+- Demo Video 
+![Watch the Video](src/2024-12-21%2014-12-45.mp4)
 
 ## Technologies Used
 - HTML5 for Audio API and music playback 

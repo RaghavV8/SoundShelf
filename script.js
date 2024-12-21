@@ -139,7 +139,6 @@ let audioPlayer = document.getElementById("audioPlayer");
 let isPlaying = false;
 let pausedTime = 0;
 audioPlayer.currentTime = 0;
-let gindex;
 
 function Play(index) {
     const songnow = songs[index];
@@ -158,8 +157,8 @@ function Play(index) {
         audioPlayer.addEventListener("loadeddata", () => {
             mobileSlider.max = 100;
             desktopSlider.max = 100;
-            mobileSlider.value = 0;
-            desktopSlider.value = 0;
+            mobileSlider.value = (pausedTime/audioPlayer.duration)*100;
+            desktopSlider.value = (pausedTime/audioPlayer.duration)*100;
             resolve();
         }, { once: true });
     });
@@ -170,7 +169,6 @@ function Play(index) {
         else {
             pausedTime = 0;
         }
-        gindex=index;
         audioPlayer.play();
         updatePlayer(index);
         isPlaying = true;
@@ -270,8 +268,29 @@ prev.addEventListener("click", () => {
     });
 
 audioPlayer.addEventListener("ended", () => {
-    
-    songindex = (songindex + 1) % songs.length;
+    if (randx === true && !rep) {
+        let newindex;
+        do {
+            newindex = Math.floor(Math.random() * songs.length);
+        } while (songindex === newindex)
+
+            shuffleHistory.push(newindex);
+            shuffileindex= shuffleHistory.length-1;
+
+            songindex=newindex;
+            pausedTime = 0;
+            resetRot();      
+        }
+        if (rep === true) {
+            songindex = songindex;
+            pausedTime = 0;
+            resetRot();   
+        }
+        if (rep === false && randx === false) {
+            songindex = (songindex + 1) % songs.length;
+            pausedTime = 0;
+            resetRot(); 
+    }
     Play(songindex);
 });
 
@@ -347,6 +366,9 @@ function seekSong(event) {
 
     //Calculate time based on slider position
     const seekTime = (slider.value / 100) * duration;
+
+
+    pausedTime=seekTime;
 
     //Set audio current time
     audioPlayer.currentTime = seekTime;

@@ -18,7 +18,7 @@ SoundShelf is a modern, web-based Music Player that brings the Music-Stash lying
 ## Features
 - **Plug and Play**: Upload and Play your music files in your browser.
 - **Interactive Sidebar**: All selected songs for playback can be viewed in a sidebar with the currently playing song being highlighted.
-- **Dynamic VIsuals**: Songs' Album Cover (if there in the song) rotates during playback
+- **Dynamic VIsuals**: Songs' Album Cover (if present) rotates during playback
 - **Adaptive Color-Scheme**: The background color changes dynamically by choosing the most dominant color from the album-art (if available) dynamically.
 - **Smart Playback for Shuffle**: If songs are played with shuffle button on then on pressing the previous button the shuffling won't work and previously played songs with shuffle button will be played unitl the first one played.
 - **Responsive-Design**: Works seemlessly on Desktop,Tablets and mobiles with different viewports.
